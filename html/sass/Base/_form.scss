@@ -1,0 +1,219 @@
+/* ----------------------------------------------------------------------------------------------------
+Super Form Reset
+A couple of things to watch out for:
+- IE8: If a text input doesn't have padding on all sides or none the text won't be centered.
+- The default border sizes on text inputs in all UAs seem to be slightly different. You're better off using custom borders.
+- You NEED to set the font-size and family on all form elements
+- Search inputs need to have their appearance reset and the box-sizing set to content-box to match other UAs
+- You can style the upload button in webkit using ::-webkit-file-upload-button
+- ::-webkit-file-upload-button selectors can't be used in the same selector as normal ones. FF and IE freak out.
+- IE: You don't need to fake inline-block with labels and form controls in IE. They function as inline-block.
+- By turning off ::-webkit-search-decoration, it removes the extra whitespace on the left on search inputs
+----------------------------------------------------------------------------------------------------*/
+
+input,
+label,
+select,
+button,
+textarea
+{
+  margin:0;
+  border:0;
+  padding:0;
+  display:inline-block;
+  vertical-align:middle;
+  white-space:normal;
+  background:none;
+  line-height:1;
+  font-size:1rem;
+}
+
+/* Remove the stupid outer glow in Webkit */
+input:focus
+{
+  outline:0;
+}
+
+/* Box Sizing Reset
+-----------------------------------------------*/
+
+/* All of our custom controls should be what we expect them to be */
+input,
+textarea
+{
+  -webkit-box-sizing:content-box;
+  -moz-box-sizing:content-box;
+  box-sizing:content-box;
+}
+
+/* These elements are usually rendered a certain way by the browser */
+button,
+input[type=reset],
+input[type=button],
+input[type=submit],
+input[type=checkbox],
+input[type=radio],
+select
+{
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+
+/* Text Inputs
+-----------------------------------------------*/
+
+input[type=date],
+input[type=datetime],
+input[type=datetime-local],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=range],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week]
+{
+}
+
+/* Button Controls
+-----------------------------------------------*/
+
+input[type=checkbox],
+input[type=radio]
+{
+  width:13px;
+  height:13px;
+}
+
+/* File Uploads
+-----------------------------------------------*/
+
+input[type=file]
+{
+
+}
+
+/* Search Input
+-----------------------------------------------*/
+
+/* Make webkit render the search input like a normal text field */
+input[type=search]
+{
+  -webkit-appearance:textfield;
+  -webkit-box-sizing:content-box;
+}
+
+/* Turn off the recent search for webkit. It adds about 15px padding on the left */
+::-webkit-search-decoration
+{
+  display:none;
+}
+
+/* Buttons
+-----------------------------------------------*/
+
+button,
+input[type="reset"],
+input[type="button"],
+input[type="submit"]
+{
+  /* Fix IE7 display bug */
+  overflow:visible;
+  width:auto;
+}
+
+/* IE8 and FF freak out if this rule is within another selector */
+::-webkit-file-upload-button
+{
+  padding:0;
+  border:0;
+  background:none;
+}
+
+/* Textarea
+-----------------------------------------------*/
+
+textarea
+{
+  /* Move the label to the top */
+  vertical-align:top;
+
+  /* Turn off scroll bars in IE unless needed */
+  overflow:auto;
+}
+
+/* Selects
+-----------------------------------------------*/
+
+select
+{
+  appearance: none;
+}
+select::-ms-expand {
+  display: none;
+}
+select[multiple]
+{
+  vertical-align:top;
+}
+
+.input{height:2.5em;}
+.input input{width:100%;height:2.5em;line-height:2.5em;padding:0 .5em;box-sizing:border-box;border:1px solid #000;background:#fff;font-size:.875rem;border-radius:0;}
+.form__input--add-btn{
+  input {
+    width:calc(100% - 90px);
+    margin-right:5px;
+  }
+}
+input[disabled]{background:#efefef;}
+
+
+.checkbox{position:relative;padding-left:1.5em;font-size:1rem;cursor:pointer;font-size:.75rem;}
+.checkbox__icon{position:absolute;left:0;top:50%;transform:translateY(-50%);width:1em;height:1em;border:1px solid #e1e1e1;border-radius:.3em;}
+.checkbox__input:checked + .checkbox__icon{background:url(/html/images/icon-checkbox.png) $blue no-repeat center;background-size:auto .5em;}
+
+.radio{position:relative;font-size:1rem;cursor:pointer;text-align:center;}
+.radio__icon{width:.75em;height:.75em;border:1px solid #e1e1e1;border-radius:.3em;border-radius:50%;display:inline-block;background:#fff;position:relative;margin-top:.5em;}
+.radio__input:checked  + .radio__icon:after{content:'';display:block;width:.5em;height:.5em;position:absolute;left:50%;top:50%;transform:translate(-50%, -50%);box-sizing:border-box;background:$blue;display:inline-block;border-radius:50%;}
+.radio__input:checked + .event__select-item-imgbox{border:2px solid $orange;box-sizing:border-box;}
+.radio__input:checked + .event__select-item-imgbox + .radio__icon:after{content:'';display:block;width:.5em;height:.5em;position:absolute;left:50%;top:50%;transform:translate(-50%, -50%);box-sizing:border-box;background:$orange;display:inline-block;border-radius:50%;}
+
+.form--form{
+  margin-top:2em;
+}
+
+.form__row{
+  margin-bottom:.5em;
+  padding-left:6.5em;
+  box-sizing:border-box;
+  position:relative;
+  &.form__row--width-100{
+    padding:0;
+    width:100%;
+  }
+  &.form__row--margintop{
+    margin-top:2em;
+  }
+  &:last-child{
+    margin-bottom:0;
+  }
+  .form__title{
+    position:absolute;
+    left:0;
+    top:0;
+    line-height:2.5em;
+    font-size:.875rem;
+    font-weight:400;
+    white-space:nowrap;
+    label {
+      font-size:.875rem;
+      white-space:nowrap;
+    }
+  }
+}
+

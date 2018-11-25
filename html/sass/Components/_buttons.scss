@@ -1,0 +1,39 @@
+.btn{
+  width:100px;
+  line-height:2.5em;
+  font-size:.875rem;
+  display:inline-block;
+  text-align:center;
+  box-sizing:border-box;
+  height:2.5em;
+
+  &--full{
+    width:100%;
+  }
+  &--col2{
+    width:50%;
+  }
+
+  &--input{
+    width:85px;
+    letter-spacing: -.05em;
+  }
+
+  &--blue{
+    background:$blue;
+    color:#fff;
+  }
+  &--gray{
+    background:#e0e0e0;
+    color:#333;
+    border:1px solid #333;
+  }
+  &--deepgray{
+    background:$gray;
+    color:#fff;
+  }
+  &--white{
+    background:#efefef;
+    color:#333;
+  }
+}

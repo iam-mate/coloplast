@@ -1,0 +1,90 @@
+.header{
+  text-align:center;
+  padding:1em 0 0;
+  background:url(/html/images/header-bg.png) no-repeat center;
+  background-size:cover;
+  overflow:hidden;
+  .header__logo{
+    text-align:left;
+    img{
+      height:1.5em;
+    }
+  }
+  .header__title{
+    font-weight:500;
+    font-size:1.75rem;
+    letter-spacing:-.05em;
+    line-height:1.2em;
+    margin-bottom:1em;
+    margin-top:1em;
+  }
+  .header__point{
+    color:$blue;
+  }
+  .header__img{
+    width:50%;
+    max-width:300px;
+  }
+}
+
+
+.i2-header{
+  padding:2.5em 0;
+  background:url(/html/images/index2-bg.png) #ffe19b no-repeat center 1em;
+  background-size:90% auto;
+  text-align:center;
+  letter-spacing: -.05em;
+  .header__title-box{
+    font-size:1.5rem;
+    color:$blue;
+    font-weight:700;
+  }
+  .header__title{
+    color:#fff;
+    max-width:250px;
+    margin:0 auto;
+    margin-top:.3em;
+    font-size:1rem;
+    img{
+      vertical-align:top;
+    }
+  }
+
+  .header__stepbox{
+    max-width:350px;
+    margin:0 auto;
+    margin-top:2em;
+  }
+  .header__step-li{
+    position:relative;
+    padding-left:6em;
+    box-sizing:border-box;
+    text-align:left;
+    margin-bottom:1em;
+    &:last-child{
+      margin-bottom:0;
+    }
+  }
+  .header__step-idx{
+    color:#fff;
+    position:absolute;
+    left:0;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:1.5rem;
+    letter-spacing:-.05em;
+  }
+  .header__step-item{
+    background:#fff;
+    border-radius:2em;
+    padding:.5em 1.5em;
+    box-sizing:border-box;
+    font-size:.75rem;
+    letter-spacing:-.05em;
+    line-height:1.3em;
+    a{
+      color:#333;
+      vertical-align:top;
+    }
+  }
+}
